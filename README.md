@@ -1,5 +1,5 @@
 
-# 💡 SmartCustomerSegmentation
+# 💡 BankClus: Smart Customer Segmentation
 
 A Flask-based web application that segments banking customers into distinct clusters using K-Means clustering. This machine learning solution helps banks and financial institutions better understand customer behavior and strategize services accordingly.
 
@@ -96,17 +96,6 @@ Then open your browser at 👉 `http://127.0.0.1:5000`
 
 ---
 
-## 📸 Screenshots
-
-<details>
-<summary>Click to Expand</summary>
-
-![screenshot-1](https://via.placeholder.com/800x400.png?text=Web+App+Interface)
-![screenshot-2](https://via.placeholder.com/800x400.png?text=Upload+CSV+and+View+Clusters)
-
-</details>
-
----
 
 ## 📦 Technologies Used
 
@@ -125,23 +114,4 @@ Then open your browser at 👉 `http://127.0.0.1:5000`
 - 🌐 Deploy the app using Render / Heroku / Streamlit Cloud
 - 🧩 Add customer persona labeling (High Spenders, Dormant, etc.)
 
----
 
-## 🙋‍♀️ Author
-
-👩‍💻 **Yasvi Kachhadiya**  
-Computer Engineering Student | Passionate about ML + Data  
-📧 yasvi@example.com
-
----
-
-## 🌟 Acknowledgments
-
-- Dataset: UCI Machine Learning Repository
-- Inspired by real-world banking segmentation challenges
-
----
-
-## 📜 License
-
-This project is licensed for educational and portfolio use.
