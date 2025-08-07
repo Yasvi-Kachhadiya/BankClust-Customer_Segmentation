@@ -44,13 +44,13 @@
             {% if table %}
                 <h2>Full Data with Cluster Labels & Segment Names</h2>
                 <div class="table-container">{{ table|safe }}</div>
-                <a href="/download" class="button">📥 Download Clustered CSV</a>
+                <a href="/download" class="btn">📥 Download Clustered CSV</a>
             {% endif %}
 
             {% if dist_chart %}
                 <h2>Cluster Distribution</h2>
                 <img src="data:image/png;base64,{{ dist_chart }}" alt="Cluster Distribution Chart" />
-                <a href="/download_chart/dist_chart.png" class="btn">📊 Download Bar Chart</a>
+                <a href="/download_chart/dist_chart.png" class="btn">📊 Download Bar Chart </a>
             {% endif %}
 
             {% if pie_chart %}
