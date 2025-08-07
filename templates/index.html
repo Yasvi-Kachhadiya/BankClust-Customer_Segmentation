@@ -1,21 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Bank Customer Segmentation</title>
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <meta charset="UTF-8">
+    <title>BankClust: Smart Customer Segmentation</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Upload Customer CSV File</h1>
-        <form method="POST" action="/predict" enctype="multipart/form-data">
-            <input type="file" name="file" required>
-            <input type="submit" value="Predict Cluster">
-        </form>
-        <br>
-        {% if tables %}
-            <h2>Result:</h2>
-            {{ tables|safe }}
-        {% endif %}
+        <header>
+            <h1>BankClust: Smart Customer Segmentation</h1>
+            <p class="description">
+                Upload your customer data CSV to automatically segment customers into 6 distinct clusters.
+                View distribution, proportions, and key feature trends across clusters.
+            </p>
+        </header>
+        <section class="upload-section">
+            <form method="post" enctype="multipart/form-data">
+                <label for="file">Upload Customer Data (CSV):</label>
+                <input type="file" name="file" id="file" accept=".csv" required>
+                <button type="submit">Analyze Data</button>
+            </form>
+            {% if message %}
+                <p class="error">{{ message }}</p>
+            {% endif %}
+        </section>
+        <section class="results-section">
+            {% if table %}
+                <h2>Full Data with Cluster Labels & Segment Names</h2>
+                <div class="table-container">{{ table|safe }}</div>
+            {% endif %}
+            {% if dist_chart %}
+                <h2>Cluster Distribution</h2>
+                <img src="data:image/png;base64,{{ dist_chart }}" alt="Cluster Distribution Chart" />
+            {% endif %}
+            {% if pie_chart %}
+                <h2>Cluster Proportions</h2>
+                <img src="data:image/png;base64,{{ pie_chart }}" alt="Cluster Proportions Chart" />
+            {% endif %}
+            {% if line_chart %}
+                <h2>{{ stats['Top Feature'] }} Across Clusters</h2>
+                <img src="data:image/png;base64,{{ line_chart }}" alt="Line Chart" />
+                <p class="stat">Max Variation in '{{ stats['Top Feature'] }}': {{ stats['Max Variation'] }}</p>
+            {% endif %}
+        </section>
     </div>
 </body>
 </html>
